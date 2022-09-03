@@ -27,7 +27,6 @@ transporter.verify(function (error, success) {
     }
   });
 
-const PORT = 3000;
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
@@ -57,7 +56,7 @@ app.post("/sendEmail", async (req, res, next) => {
 
   
 
-
+const PORT = process.env.port || 3000
     app.listen(PORT, () => {
         console.log('Server is running on PORT:',PORT);
       });  
