@@ -2,6 +2,9 @@
 const nodemailer = require("nodemailer");
 const bodyParser = require('body-parser');
 
+
+require('dotenv').config()
+
 const express = require('express');
 const app = express();
 app.use(bodyParser.json());
@@ -10,8 +13,8 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false, // upgrade later with STARTTLS
     auth: {
-      user: "swftycodes@gmail.com",
-      pass: "xsmtpsib-4b1246b2785032ed079796ca4d8312c77538767165ba9f18db7da13d235ca8b0-WILn8jcBxSvrQJAd",
+      user: process.env.USER,
+      pass: process.env.PASS
     },
   });
 
