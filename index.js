@@ -9,8 +9,7 @@ const express = require('express');
 const app = express();
 app.use(bodyParser.json());
 const transporter = nodemailer.createTransport({
-    host: "https://smtp-relay.brevo.com
-",
+    host: "https://smtp-relay.brevo.com",
     port: 587,
     secure: false, // upgrade later with STARTTLS
     auth: {
